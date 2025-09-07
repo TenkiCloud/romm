@@ -1,12 +1,12 @@
 name: Build Experimental Docker Image
 
-on:
-  workflow_dispatch:
-    inputs:
-      # trunk-ignore(checkov/CKV_GHA_7)
-      branch:
-        description: "Git branch to build"
-        required: true
+on: workflow_dispatch
+  # workflow_dispatch:
+  #   inputs:
+  #     # trunk-ignore(checkov/CKV_GHA_7)
+  #     branch:
+  #       description: "Git branch to build"
+  #       required: true
 
 permissions:
   id-token: write
