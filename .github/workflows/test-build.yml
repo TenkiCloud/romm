@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: tenki-standard-autoscale
     permissions:
       id-token: write
       contents: write
