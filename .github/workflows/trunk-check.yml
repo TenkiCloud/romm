@@ -1,7 +1,7 @@
 name: Run Trunk Check
 
-on:
-  pull_request:
+on: workflow_dispatch
+  # pull_request:
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
