@@ -43,14 +43,14 @@ jobs:
       #     username: ${{ secrets.DOCKER_USERNAME }}
       #     password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Generate Docker metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: |
-            name=rommapp/romm-testing
-          tags: |
-            type=raw,value=${{ github.event.inputs.branch }}
+      # - name: Generate Docker metadata
+      #   id: meta
+      #   uses: docker/metadata-action@v5
+      #   with:
+      #     images: |
+      #       name=rommapp/romm-testing
+      #     tags: |
+      #       type=raw,value=${{ github.event.inputs.branch }}
 
       - name: Build full image
         id: build-full
@@ -58,7 +58,7 @@ jobs:
         with:
           file: docker/Dockerfile
           context: .
-          push: true
+          push: false
           platforms: linux/arm64,linux/amd64
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: dummy-tag
           target: full-image
